@@ -27,6 +27,20 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const navItems = [
     { name: 'Bosh sahifa', path: '/' },
     { name: 'Biz haqimizda', path: '/about' },
@@ -73,11 +87,11 @@ const Navbar = () => {
         </div>
 
         {/* Main Navbar */}
-        <nav className={`w-full transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white shadow-lg backdrop-blur-custom' 
-            : 'bg-white/95 backdrop-blur-custom'
-        }`}>
+          <nav className={`w-full transition-all duration-300 relative ${
+            scrolled 
+              ? 'bg-white shadow-lg backdrop-blur-custom' 
+              : 'bg-white/95 backdrop-blur-custom'
+          }`}>
         <div className="container-custom">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -145,12 +159,12 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t border-gray-200"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="lg:hidden bg-white border-t border-gray-200 absolute top-full left-0 right-0 z-50 shadow-lg h-screen overflow-y-auto"
             >
-              <div className="container-custom py-4">
+              <div className="container-custom py-4 h-full flex flex-col justify-center">
                 <div className="space-y-2">
                   {navItems.map((item) => (
                     <div key={item.name}>
