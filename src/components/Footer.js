@@ -46,7 +46,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src="/logoshape_03.svg" alt="Turk Global Center" className="w-24 h-24" />
+              <img src="/logoshape_03.svg" alt="Turk Global Center" className="w-24 h-24" loading="lazy" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz.

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { 
   Menu, 
   X, 
@@ -13,11 +14,13 @@ import {
   Stethoscope,
   Microscope
 } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,22 +45,22 @@ const Navbar = () => {
   }, [isOpen]);
 
   const navItems = [
-    { name: 'Bosh sahifa', path: '/' },
-    { name: 'Biz haqimizda', path: '/about' },
+    { name: t('navigation.home'), path: '/' },
+    { name: t('navigation.about'), path: '/about' },
     { 
-      name: 'Xizmatlar', 
+      name: t('navigation.services'), 
       path: '/services',
       dropdown: [
-        { name: 'Ayollar sport zali', path: '/services/fitness', icon: Activity },
-        { name: 'Go\'zallik markazi', path: '/services/beauty', icon: Sparkles },
-        { name: 'Poliklinika', path: '/services/polyclinic', icon: Stethoscope },
-        { name: 'Laboratoriya', path: '/services/laboratory', icon: Microscope }
+        { name: t('services.fitnessCenter'), path: '/services/fitness', icon: Activity },
+        { name: t('services.beautyCenter'), path: '/services/beauty', icon: Sparkles },
+        { name: t('services.polyclinic'), path: '/services/polyclinic', icon: Stethoscope },
+        { name: t('services.laboratory'), path: '/services/laboratory', icon: Microscope }
       ]
     },
-    { name: 'Shifokorlar', path: '/doctors' },
-    { name: 'Qabulga yozilish', path: '/appointment' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Aloqa', path: '/contact' }
+    { name: t('navigation.doctors'), path: '/doctors' },
+    { name: t('navigation.appointment'), path: '/appointment' },
+    { name: t('navigation.blog'), path: '/blog' },
+    { name: t('navigation.contact'), path: '/contact' }
   ];
 
   return (
@@ -96,11 +99,11 @@ const Navbar = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img src="/logoshape_03.svg" alt="Turk Global Center" className="w-24 h-24" />
+              <img src="/logoshape_03.svg" alt="Turk Global Center" className="w-24 h-24" loading="lazy" />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-6">
               {navItems.map((item) => (
                 <div key={item.name} className="relative group">
                   <Link
@@ -133,6 +136,9 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
+              
+              {/* Language Switcher */}
+              <LanguageSwitcher />
             </div>
 
             {/* CTA Button */}
@@ -141,7 +147,7 @@ const Navbar = () => {
                 to="/appointment"
                 className="btn-primary flex items-center space-x-2"
               >
-                <span>Qabulga yozilish</span>
+                <span>{t('navigation.appointment')}</span>
               </Link>
             </div>
 
@@ -149,6 +155,8 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
+              aria-label={isOpen ? "Menuni yopish" : "Menuni ochish"}
+              aria-expanded={isOpen}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -163,6 +171,8 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               className="lg:hidden bg-white border-t border-gray-200 absolute top-full left-0 right-0 z-50 shadow-lg h-screen overflow-y-auto"
+              role="navigation"
+              aria-label="Asosiy navigatsiya"
             >
               <div className="container-custom py-4 h-full flex flex-col justify-center">
                 <div className="space-y-2">
@@ -199,14 +209,19 @@ const Navbar = () => {
                     </div>
                   ))}
                   
-                  <div className="pt-4">
+                  <div className="pt-4 space-y-4">
                     <Link
                       to="/appointment"
                       onClick={() => setIsOpen(false)}
                       className="btn-primary w-full text-center block"
                     >
-                      Qabulga yozilish
+                      {t('navigation.appointment')}
                     </Link>
+                    
+                    {/* Mobile Language Switcher */}
+                    <div className="px-4">
+                      <LanguageSwitcher />
+                    </div>
                   </div>
                 </div>
               </div>

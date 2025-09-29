@@ -1,0 +1,71 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "doctors": "Doctors",
+    "appointment": "Appointment",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "services": {
+    "fitnessCenter": "Women's Gym",
+    "beautyCenter": "Beauty Center",
+    "polyclinic": "Polyclinic",
+    "laboratory": "Laboratory"
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "callNow": "Call Now",
+    "bookAppointment": "Book Appointment",
+    "workingHours": "Working Hours",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "name": "Name",
+    "message": "Message",
+    "send": "Send",
+    "submit": "Submit",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu",
+    "closeMenu": "Close Menu",
+    "openMenu": "Open Menu"
+  },
+  "hero": {
+    "title": "Turk Global Center",
+    "subtitle": "Health and Beauty Center",
+    "description": "The best multi-service medical center in Termez. We offer health, beauty and sports services in one place."
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Turk Global Center - the best multi-service medical center in Termez"
+  },
+  "contact": {
+    "title": "Contact Us!",
+    "subtitle": "Professional services for your health and beauty"
+  },
+  "footer": {
+    "description": "The best multi-service medical center in Termez. We offer health, beauty and sports services in one place.",
+    "allRightsReserved": "All rights reserved"
+  },
+  "appointment": {
+    "title": "Book Appointment",
+    "subtitle": "Book professional medical services",
+    "personalInfo": "Personal Information",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "emailAddress": "Email Address",
+    "serviceType": "Select Service Type",
+    "selectDoctor": "Select Doctor",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time",
+    "additionalMessage": "Additional Message",
+    "successMessage": "Successfully Sent!",
+    "successDescription": "Your request has been received. We will contact you soon.",
+    "newRequest": "Send New Request"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "navigation": {
+    "home": "Главная",
+    "about": "О нас",
+    "services": "Услуги",
+    "doctors": "Врачи",
+    "appointment": "Записаться",
+    "blog": "Блог",
+    "contact": "Контакты"
+  },
+  "services": {
+    "fitnessCenter": "Женский спортзал",
+    "beautyCenter": "Центр красоты",
+    "polyclinic": "Поликлиника",
+    "laboratory": "Лаборатория"
+  },
+  "common": {
+    "readMore": "Подробнее",
+    "learnMore": "Узнать больше",
+    "getStarted": "Начать",
+    "contactUs": "Связаться",
+    "callNow": "Позвонить",
+    "bookAppointment": "Записаться",
+    "workingHours": "Часы работы",
+    "address": "Адрес",
+    "phone": "Телефон",
+    "email": "Email",
+    "name": "Имя",
+    "message": "Сообщение",
+    "send": "Отправить",
+    "submit": "Отправить",
+    "close": "Закрыть",
+    "open": "Открыть",
+    "menu": "Меню",
+    "closeMenu": "Закрыть меню",
+    "openMenu": "Открыть меню"
+  },
+  "hero": {
+    "title": "Turk Global Center",
+    "subtitle": "Центр здоровья и красоты",
+    "description": "Лучший многопрофильный медицинский центр в Термезе. Предлагаем услуги здоровья, красоты и спорта в одном месте."
+  },
+  "about": {
+    "title": "О нас",
+    "description": "Turk Global Center - лучший многопрофильный медицинский центр в Термезе"
+  },
+  "contact": {
+    "title": "Свяжитесь с нами!",
+    "subtitle": "Профессиональные услуги для вашего здоровья и красоты"
+  },
+  "footer": {
+    "description": "Лучший многопрофильный медицинский центр в Термезе. Предлагаем услуги здоровья, красоты и спорта в одном месте.",
+    "allRightsReserved": "Все права защищены"
+  },
+  "appointment": {
+    "title": "Записаться на прием",
+    "subtitle": "Запишитесь на профессиональные медицинские услуги",
+    "personalInfo": "Личная информация",
+    "fullName": "Имя и фамилия",
+    "phoneNumber": "Номер телефона",
+    "emailAddress": "Email адрес",
+    "serviceType": "Выберите тип услуги",
+    "selectDoctor": "Выберите врача",
+    "selectDate": "Выберите дату",
+    "selectTime": "Выберите время",
+    "additionalMessage": "Дополнительное сообщение",
+    "successMessage": "Успешно отправлено!",
+    "successDescription": "Ваш запрос принят. Мы свяжемся с вами в ближайшее время.",
+    "newRequest": "Отправить новый запрос"
+  }
+}

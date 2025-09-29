@@ -1,0 +1,71 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "doctors": "Doktorlar",
+    "appointment": "Randevu",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "services": {
+    "fitnessCenter": "Kadın Spor Salonu",
+    "beautyCenter": "Güzellik Merkezi",
+    "polyclinic": "Poliklinik",
+    "laboratory": "Laboratuvar"
+  },
+  "common": {
+    "readMore": "Devamını Oku",
+    "learnMore": "Daha Fazla Öğren",
+    "getStarted": "Başla",
+    "contactUs": "İletişime Geç",
+    "callNow": "Şimdi Ara",
+    "bookAppointment": "Randevu Al",
+    "workingHours": "Çalışma Saatleri",
+    "address": "Adres",
+    "phone": "Telefon",
+    "email": "Email",
+    "name": "İsim",
+    "message": "Mesaj",
+    "send": "Gönder",
+    "submit": "Gönder",
+    "close": "Kapat",
+    "open": "Aç",
+    "menu": "Menü",
+    "closeMenu": "Menüyü Kapat",
+    "openMenu": "Menüyü Aç"
+  },
+  "hero": {
+    "title": "Turk Global Center",
+    "subtitle": "Sağlık ve Güzellik Merkezi",
+    "description": "Termez'deki en iyi çok hizmetli tıp merkezi. Sağlık, güzellik ve spor hizmetlerini tek yerde sunuyoruz."
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Turk Global Center - Termez'deki en iyi çok hizmetli tıp merkezi"
+  },
+  "contact": {
+    "title": "Bizimle İletişime Geçin!",
+    "subtitle": "Sağlığınız ve güzelliğiniz için profesyonel hizmetler"
+  },
+  "footer": {
+    "description": "Termez'deki en iyi çok hizmetli tıp merkezi. Sağlık, güzellik ve spor hizmetlerini tek yerde sunuyoruz.",
+    "allRightsReserved": "Tüm hakları saklıdır"
+  },
+  "appointment": {
+    "title": "Randevu Al",
+    "subtitle": "Profesyonel tıbbi hizmetler için randevu alın",
+    "personalInfo": "Kişisel Bilgiler",
+    "fullName": "Ad Soyad",
+    "phoneNumber": "Telefon Numarası",
+    "emailAddress": "Email Adresi",
+    "serviceType": "Hizmet Türünü Seçin",
+    "selectDoctor": "Doktor Seçin",
+    "selectDate": "Tarih Seçin",
+    "selectTime": "Saat Seçin",
+    "additionalMessage": "Ek Mesaj",
+    "successMessage": "Başarıyla Gönderildi!",
+    "successDescription": "Talebiniz alındı. Yakında sizinle iletişime geçeceğiz.",
+    "newRequest": "Yeni Talep Gönder"
+  }
+}

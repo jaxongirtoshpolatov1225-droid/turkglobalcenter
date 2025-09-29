@@ -1,0 +1,71 @@
+{
+  "navigation": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "services": "Xizmatlar",
+    "doctors": "Shifokorlar",
+    "appointment": "Qabulga yozilish",
+    "blog": "Blog",
+    "contact": "Aloqa"
+  },
+  "services": {
+    "fitnessCenter": "Ayollar sport zali",
+    "beautyCenter": "Go'zallik markazi",
+    "polyclinic": "Poliklinika",
+    "laboratory": "Laboratoriya"
+  },
+  "common": {
+    "readMore": "Batafsil",
+    "learnMore": "Ko'proq o'rganish",
+    "getStarted": "Boshlash",
+    "contactUs": "Bog'lanish",
+    "callNow": "Qo'ng'iroq qiling",
+    "bookAppointment": "Qabulga yozilish",
+    "workingHours": "Ish vaqti",
+    "address": "Manzil",
+    "phone": "Telefon",
+    "email": "Email",
+    "name": "Ism",
+    "message": "Xabar",
+    "send": "Yuborish",
+    "submit": "Yuborish",
+    "close": "Yopish",
+    "open": "Ochish",
+    "menu": "Menyu",
+    "closeMenu": "Menyuni yopish",
+    "openMenu": "Menyuni ochish"
+  },
+  "hero": {
+    "title": "Turk Global Center",
+    "subtitle": "Sog'liq va go'zallik markazi",
+    "description": "Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz."
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "description": "Turk Global Center - Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz"
+  },
+  "contact": {
+    "title": "Biz bilan bog'laning!",
+    "subtitle": "Sog'ligingiz va go'zalligingiz uchun professional xizmatlar"
+  },
+  "footer": {
+    "description": "Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz.",
+    "allRightsReserved": "Barcha huquqlar himoyalangan"
+  },
+  "appointment": {
+    "title": "Qabulga yozilish",
+    "subtitle": "Professional tibbiy xizmatlar uchun qabulga yoziling",
+    "personalInfo": "Shaxsiy ma'lumotlar",
+    "fullName": "Ism va familiya",
+    "phoneNumber": "Telefon raqami",
+    "emailAddress": "Email manzili",
+    "serviceType": "Xizmat turini tanlang",
+    "selectDoctor": "Shifokor tanlang",
+    "selectDate": "Sana tanlang",
+    "selectTime": "Vaqt tanlang",
+    "additionalMessage": "Qo'shimcha xabar",
+    "successMessage": "Muvaffaqiyatli yuborildi!",
+    "successDescription": "Sizning so'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.",
+    "newRequest": "Yangi so'rov yuborish"
+  }
+}
