@@ -29,7 +29,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Manzil',
       details: [
-        'Toshkent shahar, Chilonzor tumani',
+        'Termiz shahar, markaziy tuman',
         'Mustaqillik ko\'chasi, 123-uy'
       ],
       color: 'blue'
@@ -38,7 +38,7 @@ const Contact = () => {
       icon: Phone,
       title: 'Telefon',
       details: [
-        '+998 90 123 45 67',
+        '+998 90 075 12 34',
         '+998 71 234 56 78'
       ],
       color: 'green'
@@ -67,7 +67,7 @@ const Contact = () => {
   const departments = [
     {
       name: 'Ayollar sport zali',
-      phone: '+998 90 123 45 67',
+      phone: '+998 90 075 12 34',
       email: 'fitness@turkglobalcenter.uz',
       hours: '08:00 - 20:00'
     },
@@ -107,7 +107,7 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <div className="pt-20 min-h-screen flex items-center justify-center bg-gray-50">
+      <div className=" min-h-screen flex items-center justify-center bg-gray-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -135,7 +135,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 medical-gradient opacity-90"></div>
@@ -225,7 +225,7 @@ const Contact = () => {
                   <div className="text-center">
                     <Navigation className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Google Maps integratsiyasi</p>
-                    <p className="text-sm text-gray-500">Toshkent shahar, Chilonzor tumani</p>
+                    <p className="text-sm text-gray-500">Termiz shahar, markaziy tuman</p>
                   </div>
                 </div>
               </div>
@@ -246,7 +246,7 @@ const Contact = () => {
                     href="https://t.me/turkglobalcenter"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                    className="w-full bg-primary-600 text-white hover:bg-primary-700 font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                   >
                     <span>Telegram</span>
                   </a>
@@ -304,7 +304,7 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        placeholder="+998 90 123 45 67"
+                        placeholder="+998 90 075 12 34"
                       />
                     </div>
                   </div>
@@ -447,7 +447,7 @@ const Contact = () => {
               },
               {
                 question: 'Shoshilinch holatda qanday yordam olish mumkin?',
-                answer: 'Shoshilinch holatda +998 90 123 45 67 raqamiga qo\'ng\'iroq qiling. Biz 24/7 shoshilinch tibbiy yordam xizmatini taqdim etamiz.'
+                answer: 'Shoshilinch holatda +998 90 075 12 34 raqamiga qo\'ng\'iroq qiling. Biz 24/7 shoshilinch tibbiy yordam xizmatini taqdim etamiz.'
               },
               {
                 question: 'Karta qabul qilinadimi?',

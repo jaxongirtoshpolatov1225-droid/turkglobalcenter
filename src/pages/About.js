@@ -46,7 +46,7 @@ const About = () => {
     {
       year: '2010',
       title: 'Turk Global Center asos solindi',
-      description: 'Toshkentda birinchi ko\'p xizmatli tibbiy markaz ochildi'
+      description: 'Termizda birinchi ko\'p xizmatli tibbiy markaz ochildi'
     },
     {
       year: '2015',
@@ -97,7 +97,7 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 medical-gradient opacity-90"></div>
@@ -115,7 +115,7 @@ const About = () => {
             </div>
             <h1 className="text-5xl font-bold mb-6">Biz haqimizda</h1>
             <p className="text-xl mb-8 opacity-90">
-              Turk Global Center - Toshkentdagi eng yaxshi ko'p xizmatli tibbiy markaz
+              Turk Global Center - Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz
             </p>
           </motion.div>
         </div>
@@ -133,7 +133,7 @@ const About = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Bizning tariximiz</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Turk Global Center 2010-yilda Toshkent shahrida ochilgan ko'p xizmatli tibbiy markazdir. 
+                  Turk Global Center 2010-yilda Termiz shahrida ochilgan ko'p xizmatli tibbiy markazdir. 
                   Bizning maqsadimiz - aholiga to'liq tibbiy, go'zallik va sport xizmatlarini bitta joyda 
                   taqdim etishdir.
                 </p>
@@ -449,15 +449,15 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+998901234567"
-                className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                href="tel:+998900751234"
+                className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Qo'ng'iroq qiling</span>
               </a>
               <a
                 href="/appointment"
-                className="bg-blue-600 text-white hover:bg-blue-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-primary-600 text-white hover:bg-primary-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <span>Qabulga yozilish</span>
               </a>

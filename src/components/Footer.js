@@ -45,17 +45,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Turk Global Center</h3>
-                <p className="text-sm text-gray-400">Ko'p xizmatli tibbiy markaz</p>
-              </div>
+            <div className="flex items-center">
+              <img src="/logoshape_03.svg" alt="Turk Global Center" className="w-24 h-24" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Toshkentdagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz.
+              Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -113,7 +107,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
-                    Toshkent shahar, Chilonzor tumani<br />
+                    Termiz shahar, markaziy tuman<br />
                     Mustaqillik ko'chasi, 123-uy
                   </p>
                 </div>
@@ -122,7 +116,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-400 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">+998 90 123 45 67</p>
+                  <p className="text-gray-300 text-sm">+998 90 075 12 34</p>
                   <p className="text-gray-300 text-sm">+998 71 234 56 78</p>
                 </div>
               </div>

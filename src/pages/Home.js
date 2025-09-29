@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -14,10 +14,20 @@ import {
   CheckCircle,
   Phone,
   MapPin,
-  Clock
+  Clock,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 const Home = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   const services = [
     {
       title: 'Ayollar sport zali',
@@ -63,26 +73,44 @@ const Home = () => {
   const testimonials = [
     {
       name: 'Malika Karimova',
-      role: 'Mijoz',
-      content: 'Turk Global Center\'da barcha xizmatlar juda sifatli. Shifokorlar professional va xizmat ko\'rsatish darajasi yuqori.',
+      role: 'Ayollar sport zali mijoz',
+      content: 'Turk Global Center\'da 2 yildan beri fitness mashg\'ulotlarini o\'tkazaman. Trenerlar juda professional va yordamchi. Natijalar ajoyib!',
       rating: 5
     },
     {
       name: 'Dilnoza Toshmatova',
-      role: 'Mijoz',
-      content: 'Ayollar sport zalida mashg\'ulotlar juda qiziqarli. Trenerlar professional va yordamchi.',
+      role: 'Go\'zallik markazi mijoz',
+      content: 'Kosmetologiya xizmatlari juda sifatli. Kosmetologlar tajribali va zamonaviy usullardan foydalanadi. Tavsiya qilaman!',
       rating: 5
     },
     {
       name: 'Oydin Mirzayeva',
-      role: 'Mijoz',
-      content: 'Go\'zallik markazida xizmatlar ajoyib. Kosmetologlar juda tajribali va natijalar ajoyib.',
+      role: 'Poliklinika mijoz',
+      content: 'Shifokorlar juda professional va diqqatli. Tibbiy tekshiruvlar zamonaviy jihozlar bilan amalga oshiriladi. Rahmat!',
+      rating: 5
+    },
+    {
+      name: 'Zarina Nazarova',
+      role: 'Laboratoriya mijoz',
+      content: 'Laboratoriya tahlillari tez va aniq. Natijalar ertasi kuni tayyor bo\'ladi. Xizmat ko\'rsatish darajasi yuqori.',
+      rating: 5
+    },
+    {
+      name: 'Nilufar Karimova',
+      role: 'SPA xizmatlari mijoz',
+      content: 'SPA xizmatlari ajoyib! Massaj va parvarish xizmatlari juda sifatli. Dam olish uchun eng yaxshi joy.',
+      rating: 5
+    },
+    {
+      name: 'Gulnora Toshmatova',
+      role: 'Yoga darslari mijoz',
+      content: 'Yoga darslari juda foydali. Ustoz tajribali va sabr-toqatli. Stressni kamaytirishga yordam beradi.',
       rating: 5
     }
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
@@ -98,13 +126,26 @@ const Home = () => {
               className="space-y-8"
             >
               <div className="space-y-4">
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  <span className="text-primary-600">Turk Global Center</span><br />
-                  Ko'p xizmatli tibbiy markaz
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Toshkentdagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz.
-                </p>
+                <div className="relative">
+                  <div 
+                    className="absolute inset-0 opacity-20 rounded-2xl"
+                    style={{
+                      backgroundImage: "url('/hero.jpg')",
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+                  ></div>
+                  <div className="relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl">
+                    <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                      <span className="text-primary-600">Turk Global Center</span><br />
+                      Sog'liq va go'zallik markazi
+                    </h1>
+                    <p className="text-xl text-gray-600 leading-relaxed mt-4">
+                      Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz.
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -273,27 +314,65 @@ const Home = () => {
             <p className="text-xl text-gray-600">Bizning xizmatlarimiz haqida mijozlarimizning sharhlari</p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+          <div className="relative">
+            <div className="overflow-hidden">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="card"
+                className="flex transition-transform duration-500 ease-in-out"
+                animate={{ x: -currentTestimonial * 100 + '%' }}
               >
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-gray-500 text-sm">{testimonial.role}</div>
-                </div>
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-4">
+                    <div className="max-w-4xl mx-auto">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="card text-center"
+                      >
+                        <div className="flex items-center justify-center space-x-1 mb-6">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-6 h-6 text-yellow-500 fill-current" />
+                          ))}
+                        </div>
+                        <p className="text-xl text-gray-600 mb-8 italic leading-relaxed">"{testimonial.content}"</p>
+                        <div>
+                          <div className="text-2xl font-semibold text-gray-900 mb-2">{testimonial.name}</div>
+                          <div className="text-lg text-gray-500">{testimonial.role}</div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                ))}
               </motion.div>
-            ))}
+            </div>
+            
+            {/* Navigation Buttons */}
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-50 transition-colors duration-200"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-600" />
+            </button>
+            
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-50 transition-colors duration-200"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-600" />
+            </button>
+            
+            {/* Dots Indicator */}
+            <div className="flex justify-center space-x-2 mt-8">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                    index === currentTestimonial ? 'bg-primary-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -343,7 +422,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Manzil</h3>
               <p className="text-gray-600">
-                Toshkent shahar, Chilonzor tumani<br />
+                Termiz shahar, markaziy tuman<br />
                 Mustaqillik ko'chasi, 123-uy
               </p>
             </div>
@@ -354,7 +433,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Telefon</h3>
               <p className="text-gray-600">
-                +998 90 123 45 67<br />
+                +998 90 075 12 34<br />
                 +998 71 234 56 78
               </p>
             </div>

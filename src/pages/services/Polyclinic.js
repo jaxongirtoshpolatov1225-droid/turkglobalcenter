@@ -128,7 +128,7 @@ const Polyclinic = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 medical-gradient opacity-90"></div>
@@ -158,7 +158,7 @@ const Polyclinic = () => {
               </a>
               <a
                 href="#departments"
-                className="bg-blue-600 text-white hover:bg-blue-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-primary-600 text-white hover:bg-primary-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <span>Bo'limlarni ko'ring</span>
                 <ArrowRight className="w-5 h-5" />
@@ -252,7 +252,7 @@ const Polyclinic = () => {
                   ))}
                 </ul>
                 
-                <button className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+                <button className="w-full bg-primary-600 text-white hover:bg-primary-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Qabulga yozilish</span>
                 </button>
@@ -312,7 +312,7 @@ const Polyclinic = () => {
                   ))}
                 </div>
                 
-                <button className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                <button className="w-full bg-primary-600 text-white hover:bg-primary-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
                   Qabulga yozilish
                 </button>
               </motion.div>
@@ -343,7 +343,7 @@ const Polyclinic = () => {
                 className="bg-red-600 text-white hover:bg-red-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 text-lg"
               >
                 <Phone className="w-6 h-6" />
-                <span>Shoshilinch qo'ng'iroq: +998 90 123 45 67</span>
+                <span>Shoshilinch qo'ng'iroq: +998 90 075 12 34</span>
               </a>
             </div>
           </motion.div>
@@ -375,7 +375,7 @@ const Polyclinic = () => {
               </a>
               <a
                 href="/appointment"
-                className="bg-blue-600 text-white hover:bg-blue-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-primary-600 text-white hover:bg-primary-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Qabulga yozilish</span>

@@ -48,45 +48,41 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-primary-600 text-white py-2 hidden lg:block">
-        <div className="container-custom">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4" />
-                <span>+998 90 123 45 67</span>
+      {/* Combined Sticky Header */}
+      <div className="sticky top-0 z-50 w-full">
+        {/* Top Bar */}
+        <div className="bg-primary-600 text-white py-2 hidden lg:block">
+          <div className="container-custom">
+            <div className="flex justify-between items-center text-sm">
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4" />
+                  <span>+998 90 075 12 34</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>Surxandaryo viloyat, Termiz shahar</span>
+                </div>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4" />
-                <span>Toshkent shahar, Chilonzor tumani</span>
+                <Clock className="w-4 h-4" />
+                <span>Dushanba - Yakshanba: 08:00 - 20:00</span>
               </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Clock className="w-4 h-4" />
-              <span>Dushanba - Yakshanba: 08:00 - 20:00</span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Navbar */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-lg backdrop-blur-custom' 
-          : 'bg-white/95 backdrop-blur-custom'
-      }`}>
+        {/* Main Navbar */}
+        <nav className={`w-full transition-all duration-300 ${
+          scrolled 
+            ? 'bg-white shadow-lg backdrop-blur-custom' 
+            : 'bg-white/95 backdrop-blur-custom'
+        }`}>
         <div className="container-custom">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Turk Global Center</h1>
-                <p className="text-sm text-gray-600">Ko'p xizmatli tibbiy markaz</p>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img src="/logoshape_03.svg" alt="Turk Global Center" className="w-24 h-24" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -203,7 +199,8 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+        </nav>
+      </div>
     </>
   );
 };

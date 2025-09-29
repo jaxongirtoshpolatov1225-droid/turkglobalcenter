@@ -80,33 +80,84 @@ const Appointment = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Bu yerda form ma'lumotlarini serverga yuborish logikasi bo'ladi
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
+    
+    try {
+      // Telegram bot orqali xabar yuborish
+      const message = `
+🏥 *Yangi qabulga yozilish*
+
+👤 *Ism:* ${formData.name}
+📞 *Telefon:* ${formData.phone}
+📧 *Email:* ${formData.email}
+🏥 *Xizmat:* ${formData.service}
+👨‍⚕️ *Shifokor:* ${formData.doctor}
+📅 *Sana:* ${formData.date}
+⏰ *Vaqt:* ${formData.time}
+💬 *Xabar:* ${formData.message}
+
+📝 *Vaqt:* ${new Date().toLocaleString('uz-UZ')}
+      `;
+
+      // Telegram bot API
+      const botToken = process.env.REACT_APP_TELEGRAM_BOT_TOKEN || 'YOUR_BOT_TOKEN';
+      const chatId = process.env.REACT_APP_TELEGRAM_CHAT_ID || 'YOUR_CHAT_ID';
+      
+      const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'Markdown'
+        })
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Form ma'lumotlarini tozalash
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          service: '',
+          doctor: '',
+          date: '',
+          time: '',
+          message: ''
+        });
+      } else {
+        alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+    }
   };
 
   if (isSubmitted) {
     return (
-      <div className="pt-20 min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="container-custom">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+        <div className="w-full max-w-md">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="max-w-md mx-auto text-center"
+            className="text-center bg-white rounded-xl shadow-lg p-8"
           >
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-green-600" />
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Muvaffaqiyatli yuborildi!</h1>
-            <p className="text-gray-600 mb-8">
+            <h1 className="text-2xl font-bold text-gray-900 mb-3">Muvaffaqiyatli yuborildi!</h1>
+            <p className="text-gray-600 mb-6 text-sm">
               Sizning so'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
-              className="btn-primary"
+              className="btn-primary w-full"
             >
               Yangi so'rov yuborish
             </button>
@@ -117,7 +168,7 @@ const Appointment = () => {
   }
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 medical-gradient opacity-90"></div>
@@ -133,8 +184,8 @@ const Appointment = () => {
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <Calendar className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-5xl font-bold mb-6">Qabulga yozilish</h1>
-            <p className="text-xl mb-8 opacity-90">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">Qabulga yozilish</h1>
+            <p className="text-lg md:text-xl mb-6 md:mb-8 opacity-90">
               Professional tibbiy xizmatlar uchun qabulga yoziling
             </p>
           </motion.div>
@@ -164,11 +215,11 @@ const Appointment = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="card"
+                  className="card p-4 md:p-6"
                 >
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     {/* Personal Information */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Ism va familiya *
@@ -200,7 +251,7 @@ const Appointment = () => {
                             onChange={handleInputChange}
                             required
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                            placeholder="+998 90 123 45 67"
+                            placeholder="+998 90 075 12 34"
                           />
                         </div>
                       </div>
@@ -228,7 +279,7 @@ const Appointment = () => {
                       <label className="block text-sm font-medium text-gray-700 mb-4">
                         Xizmat turini tanlang *
                       </label>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                         {services.map((service) => (
                           <label
                             key={service.id}
@@ -287,7 +338,7 @@ const Appointment = () => {
                     </div>
 
                     {/* Date and Time */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Sana *
@@ -372,7 +423,7 @@ const Appointment = () => {
                       <div className="flex items-center space-x-3">
                         <Phone className="w-5 h-5 text-primary-600" />
                         <div>
-                          <div className="font-medium text-gray-900">+998 90 123 45 67</div>
+                          <div className="font-medium text-gray-900">+998 90 075 12 34</div>
                           <div className="text-sm text-gray-600">Asosiy telefon</div>
                         </div>
                       </div>
@@ -429,7 +480,7 @@ const Appointment = () => {
                         href="https://t.me/turkglobalcenter"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                        className="w-full bg-primary-600 text-white hover:bg-primary-700 font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                       >
                         <span>Telegram</span>
                       </a>

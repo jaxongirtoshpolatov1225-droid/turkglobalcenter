@@ -118,10 +118,10 @@ const Laboratory = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 medical-gradient opacity-90"></div>
+        <div className="absolute inset-0 laboratory-gradient opacity-90"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         
         <div className="container-custom relative z-10 text-center text-white">
@@ -141,14 +141,14 @@ const Laboratory = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+998901234567"
-                className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-white text-laboratory-600 hover:bg-gray-100 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Qo'ng'iroq qiling</span>
               </a>
               <a
                 href="#tests"
-                className="bg-blue-600 text-white hover:bg-blue-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-laboratory-600 text-white hover:bg-laboratory-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <span>Tahlillarni ko'ring</span>
                 <ArrowRight className="w-5 h-5" />
@@ -182,8 +182,8 @@ const Laboratory = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <facility.icon className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-laboratory-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <facility.icon className="w-8 h-8 text-laboratory-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{facility.title}</h3>
                 <p className="text-gray-600">{facility.description}</p>
@@ -219,8 +219,8 @@ const Laboratory = () => {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <TestTube className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-laboratory-100 rounded-lg flex items-center justify-center">
+                      <TestTube className="w-6 h-6 text-laboratory-600" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900">{test.title}</h3>
@@ -228,7 +228,7 @@ const Laboratory = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-blue-600">{test.price}</div>
+                    <div className="text-2xl font-bold text-laboratory-600">{test.price}</div>
                     <div className="text-sm text-gray-500">{test.duration}</div>
                   </div>
                 </div>
@@ -236,13 +236,13 @@ const Laboratory = () => {
                 <ul className="space-y-2 mb-6">
                   {test.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
-                      <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-laboratory-500 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <button className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+                <button className="w-full bg-laboratory-600 text-white hover:bg-laboratory-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Tahlilga yozilish</span>
                 </button>
@@ -281,7 +281,7 @@ const Laboratory = () => {
                 </div>
                 
                 <h3 className="text-xl font-semibold text-gray-900 mb-1">{specialist.name}</h3>
-                <p className="text-blue-600 font-medium mb-2">{specialist.specialization}</p>
+                <p className="text-laboratory-600 font-medium mb-2">{specialist.specialization}</p>
                 <p className="text-gray-600 mb-2">{specialist.experience} tajriba</p>
                 <p className="text-sm text-gray-500 mb-4">{specialist.education}</p>
                 
@@ -295,14 +295,14 @@ const Laboratory = () => {
                   {specialist.specialties.map((specialty, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full"
+                      className="px-3 py-1 bg-laboratory-100 text-laboratory-700 text-sm rounded-full"
                     >
                       {specialty}
                     </span>
                   ))}
                 </div>
                 
-                <button className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                <button className="w-full bg-laboratory-600 text-white hover:bg-laboratory-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
                   Konsultatsiya
                 </button>
               </motion.div>
@@ -333,8 +333,8 @@ const Laboratory = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-laboratory-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-8 h-8 text-laboratory-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">1. Ro'yxatdan o'tish</h3>
               <p className="text-gray-600">Tahlil uchun ro'yxatdan o'ting va vaqtni belgilang</p>
@@ -346,8 +346,8 @@ const Laboratory = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Droplets className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-laboratory-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Droplets className="w-8 h-8 text-laboratory-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">2. Namuna olish</h3>
               <p className="text-gray-600">Professional mutaxassislar tomonidan namuna olinadi</p>
@@ -359,8 +359,8 @@ const Laboratory = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Microscope className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-laboratory-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Microscope className="w-8 h-8 text-laboratory-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">3. Tahlil qilish</h3>
               <p className="text-gray-600">Zamonaviy jihozlar bilan aniq tahlil qilinadi</p>
@@ -372,8 +372,8 @@ const Laboratory = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-laboratory-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-laboratory-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">4. Natija olish</h3>
               <p className="text-gray-600">Tayyor natijalarni oling va shifokor bilan maslahatlashing</p>
@@ -383,7 +383,7 @@ const Laboratory = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding medical-gradient">
+      <section className="section-padding laboratory-gradient">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -394,20 +394,20 @@ const Laboratory = () => {
             <h2 className="text-4xl font-bold text-white mb-4">
               Sog'ligingizni to'liq tekshiring!
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-laboratory-100 mb-8">
               Professional laboratoriya xizmatlari va aniq diagnostika
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+998901234567"
-                className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-white text-laboratory-600 hover:bg-gray-100 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Qo'ng'iroq qiling</span>
               </a>
               <a
                 href="/appointment"
-                className="bg-blue-600 text-white hover:bg-blue-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-laboratory-600 text-white hover:bg-laboratory-700 font-medium py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Tahlilga yozilish</span>

@@ -27,7 +27,7 @@ const Doctors = () => {
       image: '/api/placeholder/300/300',
       specialties: ['Umumiy terapiya', 'Kardiologiya', 'Endokrinologiya'],
       schedule: 'Dushanba - Juma: 09:00 - 18:00',
-      phone: '+998 90 123 45 67',
+      phone: '+998 90 075 12 34',
       email: 'malika@turkglobalcenter.uz'
     },
     {
@@ -120,7 +120,7 @@ const Doctors = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 medical-gradient opacity-90"></div>
