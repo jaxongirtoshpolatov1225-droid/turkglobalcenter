@@ -113,16 +113,184 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-beauty-50"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23e0f2fe%22%20fill-opacity%3D%220.3%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        {/* Animated Gradient Background */}
+        <motion.div 
+          className="absolute inset-0"
+          animate={{ 
+            background: [
+              'linear-gradient(135deg, #fef3c7 0%, #ffffff 50%, #fce7f3 100%)',
+              'linear-gradient(135deg, #fce7f3 0%, #ffffff 50%, #dcfce7 100%)',
+              'linear-gradient(135deg, #dcfce7 0%, #ffffff 50%, #dbeafe 100%)',
+              'linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fef3c7 100%)'
+            ]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        ></motion.div>
+        
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-primary-200 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -100, 0],
+                x: [0, Math.random() * 50 - 25, 0],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0]
+              }}
+              transition={{
+                duration: 3 + Math.random() * 4,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Animated Geometric Shapes */}
+        <motion.div
+          className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full opacity-30"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        <motion.div
+          className="absolute bottom-20 left-10 w-24 h-24 bg-gradient-to-br from-beauty-100 to-beauty-200 rounded-lg opacity-40"
+          animate={{
+            scale: [1, 0.8, 1],
+            rotate: [0, -90, -180],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+        
+        <motion.div
+          className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-br from-fitness-100 to-fitness-200 rounded-full opacity-25"
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 20, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+        
+        {/* Floating Service Icons */}
+        <motion.div
+          className="absolute top-20 left-10 text-primary-300/60"
+          animate={{ 
+            y: [0, -30, 0],
+            rotate: [0, 10, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Heart className="w-10 h-10" />
+        </motion.div>
+        
+        <motion.div
+          className="absolute top-32 right-20 text-beauty-300/60"
+          animate={{ 
+            y: [0, 25, 0],
+            rotate: [0, -15, 0],
+            scale: [1, 0.9, 1]
+          }}
+          transition={{ 
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        >
+          <Sparkles className="w-8 h-8" />
+        </motion.div>
+        
+        <motion.div
+          className="absolute bottom-32 left-20 text-fitness-300/60"
+          animate={{ 
+            y: [0, -20, 0],
+            rotate: [0, 8, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        >
+          <Activity className="w-9 h-9" />
+        </motion.div>
+        
+        <motion.div
+          className="absolute bottom-20 right-10 text-laboratory-300/60"
+          animate={{ 
+            y: [0, 18, 0],
+            rotate: [0, -12, 0],
+            scale: [1, 0.8, 1]
+          }}
+          transition={{ 
+            duration: 6.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+        >
+          <Microscope className="w-8 h-8" />
+        </motion.div>
+        
+        <motion.div
+          className="absolute top-1/3 right-1/3 text-primary-200/40"
+          animate={{ 
+            y: [0, -15, 0],
+            rotate: [0, 5, 0],
+            scale: [1, 1.15, 1]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+        >
+          <Stethoscope className="w-7 h-7" />
+        </motion.div>
         
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-8"
             >
               <div className="space-y-4">
@@ -136,52 +304,107 @@ const Home = () => {
                       backgroundRepeat: 'no-repeat'
                     }}
                   ></div>
-                  <div className="relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl">
-                    <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                      <span className="text-primary-600">Turk Global Center</span><br />
-                      Sog'liq va go'zallik markazi
-                    </h1>
-                    <p className="text-xl text-gray-600 leading-relaxed mt-4">
+                  <motion.div 
+                    className="relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl"
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    <motion.h1 
+                      className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                      <motion.span 
+                        className="text-primary-600"
+                        initial={{ scale: 0.8 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
+                      >
+                        Turk Global Center
+                      </motion.span><br />
+                      <motion.span
+                        initial={{ x: -20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 1 }}
+                      >
+                        Sog'liq va go'zallik markazi
+                      </motion.span>
+                    </motion.h1>
+                    <motion.p 
+                      className="text-xl text-gray-600 leading-relaxed mt-4"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 1.2 }}
+                    >
                       Termiz shahridagi eng yaxshi ko'p xizmatli tibbiy markaz. Sog'liq, go'zallik va sport xizmatlarini bitta joyda taklif etamiz.
-                    </p>
-                  </div>
+                    </motion.p>
+                  </motion.div>
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/appointment"
-                  className="btn-primary flex items-center justify-center space-x-2 text-lg px-8 py-4"
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <span>Qabulga yozilish</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="btn-secondary flex items-center justify-center space-x-2 text-lg px-8 py-4"
+                  <Link
+                    to="/appointment"
+                    className="btn-primary flex items-center justify-center space-x-2 text-lg px-8 py-4"
+                  >
+                    <span>Qabulga yozilish</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <span>Xizmatlarimiz</span>
-                </Link>
-              </div>
+                  <Link
+                    to="/services"
+                    className="btn-secondary flex items-center justify-center space-x-2 text-lg px-8 py-4"
+                  >
+                    <span>Xizmatlarimiz</span>
+                  </Link>
+                </motion.div>
+              </motion.div>
               
-              <div className="grid grid-cols-2 gap-4 pt-8">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500" />
-                  <span className="text-gray-700">Professional shifokorlar</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500" />
-                  <span className="text-gray-700">Zamonaviy jihozlar</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500" />
-                  <span className="text-gray-700">24/7 qo'llab-quvvatlash</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500" />
-                  <span className="text-gray-700">Arzon narxlar</span>
-                </div>
-              </div>
+              <motion.div 
+                className="grid grid-cols-2 gap-4 pt-8"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1.6 }}
+              >
+                {[
+                  { icon: CheckCircle, text: "Professional shifokorlar", delay: 0 },
+                  { icon: CheckCircle, text: "Zamonaviy jihozlar", delay: 0.1 },
+                  { icon: CheckCircle, text: "24/7 qo'llab-quvvatlash", delay: 0.2 },
+                  { icon: CheckCircle, text: "Arzon narxlar", delay: 0.3 }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-center space-x-3"
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 1.8 + item.delay }}
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.3, delay: 2 + item.delay }}
+                    >
+                      <item.icon className="w-6 h-6 text-green-500" />
+                    </motion.div>
+                    <span className="text-gray-700">{item.text}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
             
             <motion.div
